@@ -1,0 +1,35 @@
+﻿@model Models.Dto.AlunoDto
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="table-frame-row">
+    <div class="table-frame-col-50 standardpromo " id="home-target-3-1">
+        <div class="eventpromo section">
+            <div class="cmp-ev-promo-event cmp-ev-promo--standard">
+                <div class="cmp-ev-promo__content">
+                    <span class="cmp-ev-promo__type"></span>
+                    <h3 class="cmp-ev-promo-event__title">Já tem cadastro, clique no link para o login</h3>
+                </div>
+                <div class="cmp-ev-promo-event__CTA">
+                    <a class="cmp-ev-promo-event__CTA-link cmp-ev-promo-event__CTA-link_register" asp-controller="Home" asp-action="Login">
+                        Entrar
+                    </a>
+                    <span class="cmp-ev-promo-event__divider"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-frame-col-50 standardpromo " id="home-target-3-2">
+        <div class="standardpromo section">
+            <a class="promo-focus" asp-controller="Home" asp-action="Cadastrar">
+                <div class="standard-promo perspective-color">
+                    <p class="promo-label">Criar Conta</p>
+                    <h3 class="tertiary-headline">Clique no link para se cadastrar</h3>
+                    <div class="call-to-action-label ">
+                        Registre-se
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Curso Case</title>
+    <script src="/content/dam/Deloitte/resources/js/CrossDomainConsentShare.js" data-document-language="true" type="text/javascript" charset="UTF-8"></script>
+    <script src="/etc/designs/dcom/dcom-main/clientlibs-jquery.js"></script>
+    <script src="/apps/shared/clientlibs/dcom-main/clientlibs-jquery.js"></script>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/content/dam/resources/deloitte/icons/favicon.ico" />
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/content/dam/resources/deloitte/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/content/dam/resources/deloitte/icons/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/content/dam/resources/deloitte/icons/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/content/dam/resources/deloitte/icons/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/content/dam/resources/deloitte/icons/apple-icon-144x144.png" />
+    <!-- Preloading OpenSans Fonts -->
+    <link rel="preload" href="/etc/designs/dcom/assets/fonts/opensans/OpenSans-Regular-webfont.woff" as="font" type="font/woff" crossorigin="anonymous" />
+    <link rel="preload" href="/etc/designs/dcom/assets/fonts/opensans/OpenSans-Italic-webfont.woff" as="font" type="font/woff" crossorigin="anonymous" />
+    <link rel="preload" href="/etc/designs/dcom/assets/fonts/opensans/OpenSans-Semibold-webfont.woff" as="font" type="font/woff" crossorigin="anonymous" />
+    <link rel="preload" href="/etc/designs/dcom/assets/fonts/opensans/OpenSans-BoldItalic-webfont.woff" as="font" type="font/woff" crossorigin="anonymous" />
+    <link rel="preload" href="/etc/designs/dcom/assets/fonts/opensans/OpenSans-Bold-webfont.woff" as="font" type="font/woff" crossorigin="anonymous" />
+    <link rel="preload" href="/etc/designs/dcom/assets/fonts/opensans/OpenSans-SemiboldItalic-webfont.woff" as="font" type="font/woff" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/etc.clientlibs/shared/clientlibs/dcom-main.css" type="text/css">
+    <link rel="stylesheet" href="~/etc/designs/dcom/mydeloitte/base.css" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <script src="/etc.clientlibs/clientlibs/granite/utils.js"></script>
+    <script src="/etc.clientlibs/clientlibs/granite/jquery/granite.js"></script>
+    <script src="/etc.clientlibs/foundation/clientlibs/jquery.js"></script>
+    <script src="/etc.clientlibs/foundation/clientlibs/shared.js"></script>
+    <script src="/etc.clientlibs/shared/clientlibs/dcom-main.js"></script>
+    <script src="~/etc/designs/dcom/mydeloitte/base.js"></script>
+    <script src="/etc/designs/dcom/clientlibs-homepage.js"></script>
+    <script src="~/js/bootstrap.bundle.js"></script>
+    <script src="~/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/js/locales/bootstrap-datepicker.pt-br.min.js"></script>
+    @RenderSection("css", required: false)
+</head>
+<body class="ccm-enabled">
+    <header class="cmp-header" id="header" role="banner">
+        <div class="cmp-header-container cmp-container-width">
+            <button class="cmp-header__nav-icon" id="header__nav-icon" type="button" aria-label="Menu" aria-expanded="false">
+                <i class="icon-navicon"></i>
+            </button>
+            <div class="cmp-header__logo" id="header__logo">
+                <a href="#" title="Curso Case">
+                    <img src="/content/dam/assets/logos/deloitte.svg" alt="Curso Case" width="182" height="34">
+                    <img class="cmp-header__logo--print" src="/content/dam/assets/logos/deloitte-print.png" alt="" width="182" height="34">
+                </a>
+            </div>
+            <div class="annotations">
+            </div>
+            <div id="pr-nav" class="cmp-pr-nav">
+                <nav role="navigation">
+                    <ul class="nav" role="menubar">
+                        @if (TempData["Token"] != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" style="color:white" href="#">Aluno</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color:white" href="#">Disciplina</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color:white" href="#">Boletim</a>
+                            </li>
+                        }
+                        <li class="cmp-pr-nav__site-selector cmp-pr-nav__item" role="menuitem">
+                            <a href="javascript:void(0)" class="cmp-header__ut-nav__site-sel__link location-link" data-toggle="siteSelector" aria-expanded="false" role="button">
+                                <span class="desk-countrySelector">BR-PT</span>
+                                <span class="mobile-location">Localização:</span>
+                                <span class="mobile-countrySelector">Brazil-Portuguese</span>
+                                &nbsp;
+                                <i class="icon-chevron"></i>
+                            </a>
+                        </li>
+                        <li class="cmp-pr-nav__contactus-link cmp-pr-nav__item">
+                            <a href="#" aria-label="Contate-nos" class="cmp-pr-nav__item__link" title="Contact us" aria-expanded="false">
+                                <i class="icon-phone-o"></i>
+                                <span class="mobile-contactUs">Contate-nos</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="menu-overlay"></div>
+            </div>
+            <div class="cmp-header__ut-wrapper">
+                <div class="cmp-search" id="internal-search">
+                    <div class="aem-Grid aem-Grid--12">
+                        <div class="aem-GridColumn aem-GridColumn--phone--1 cmp-header__mobile--close">
+                            <button class="cmp-search__remove-icon" type="button" aria-label="Close" aria-expanded="false"> <i class="icon-remove"></i> </button>
+                        </div>
+                        <div class="aem-GridColumn aem-GridColumn--phone--11 cmp-header__mobile--searchinput">
+                        </div>
+                    </div>
+                </div>
+                <ul id="header__ut-nav" class="cmp-header__ut-nav">
+                    <li id="header__ut-nav__search-icon" class="cmp-header__ut-nav__search-icon">
+                        <button class="" type="button" aria-label="Search">
+                            <i class="icon-search"></i>
+                        </button>
+                    </li>
+                    <li id="header__ut-nav__site-sel" class="cmp-header__ut-nav__site-sel">
+                        <a href="javascript:void(0)" class="cmp-header__ut-nav__site-sel__link location-link" data-toggle="siteSelector" aria-expanded="false" role="button">
+                            <span class="desk-countrySelector">BR-PT</span>
+                            <span class="mobile-location">Localização:</span>
+                            <span class="mobile-countrySelector">Brazil-Portuguese</span>
+                            &nbsp;
+                            <i class="icon-chevron"></i>
+                        </a>
+                    </li>
+                    <li id="header__ut-nav__cts-link" class="cmp-header__ut-nav__cts-link">
+                        <a href="#" title="Contact us" aria-label="Contact us">
+                            <i class="icon-phone-o"></i>
+                            <span class="cmp-header__ut-nav__cts-link__text">Contate-nos</span>
+                        </a>
+                    </li>
+                    <li id="register" class="cmp-header__ut-nav__reg-link">
+                        <a class="icon-profile-outline icon" aria-label="Perfil" href="#" title="Curso Case"></a>
+                    </li>
+                    <li id="profile_pic_id" class="profile-pic" aria-expanded="false">
+                        <span id="profile_pic_span" class="logged-in icon">
+                   		    <img id="profile_pic">
+                        </span>
+                        <a id="profile_pic_id_mobile" href="#" target="_blank" class="header-button mobile-register-button logged-in"><span class="profile_pic_span_mobile"><img id="profile_pic_mobile"></span></a>
+                        <ul class="nav-content" id="nav-content" role="menu">
+                            <li role="menuitem">
+                                <a href="#" target="_blank" class="icon-dashboard" onclick="setCookieForPullDownMenu()">Curso Case</a>
+                            </li>
+                            <li role="menuitem">
+                                <a href="#" target="_blank" class="icon-bookmark-o" onclick="setCookieForPullDownMenu()">Curso Case</a>
+                            </li>
+                            <li role="menuitem">
+                                <a href="#" target="_blank" class="icon-tags-o" onclick="setCookieForPullDownMenu()">Curso Case</a>
+                            </li>
+                            <li role="menuitem">
+                                <a href="#" target="_blank" class="icon-profile-outline" onclick="setCookieForPullDownMenu()">Curso Case</a>
+                            </li>
+                            <li role="menuitem">
+                                <a href="#" target="_blank" class="icon-configure" onclick="setCookieForPullDownMenu()">Curso Case</a>
+                            </li>
+                            <li>
+                                <button class="signout_button" href="#" onclick="logOut();">Sair</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="breadcrumb-container">
+            <div class="languageselector">
+                <ul class="language-display">
+                    <li>
+                        <a href="#" class="active">
+                            Portuguese
+                        </a>
+                        &nbsp;|&nbsp;
+                    </li>
+                    <li>
+                        <a class="langLink" href="#">
+                            English
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="wrapper home-page" style="top: 98px;">
+        <div class="extended-background black">
+        </div>
+        <div class="main-container home-page">
+            <div class="content main">
+                @*<div id="home-page-mobile-tabs" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                    <div class="tabHeader">
+                        <ul class="tabbedMenu">
+                            <li class="tab active" data-tab="featured"><a class="label">Destaques</a></li>
+                            <li class="tab" data-tab="trending"><a class="label">Descubra mais</a></li>
+                        </ul>
+                    </div>
+                </div>*@
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <div class="dcom-footer-wrapper" style="top: 98px;">
+        <footer class="cmp-footer" id="footer">
+            <div class="cmp-footer__top-bar">
+                <div class="cmp-container-width aem-Grid aem-Grid--12">
+                    <div class="aem-GridColumn aem-GridColumn--default--9 aem-GridColumn--tablet--12 aem-GridColumn--phone--12">
+                    </div>
+                    <div class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--12 aem-GridColumn--phone--12">
+                    </div>
+                </div>
+            </div>
+            <div class="cmp-footer__utility-bar" id="footer__utility-bar">
+                <div class="cmp-container-width aem-Grid aem-Grid--12">
+                    <div class="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
+                        <div class="cmp-footer__utility-bar__loc">
+                        </div>
+                        <div class="cmp-footer__utility-bar__loc">
+                            <a href="javascript:void(0)" class="cmp-header__ut-nav__site-sel__link location-link" data-toggle="siteSelector" aria-expanded="false" role="button">
+                                <span class="desk-countrySelector">BR-PT</span>
+                                <span class="mobile-location">Localização:</span>
+                                <span class="mobile-countrySelector">Brazil-Portuguese</span>
+                                &nbsp;
+                                <i class="icon-chevron"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12">
+                        <div class="cmp-footer__utility-bar__about">
+                            <a href="#" title="Sobre o Curso Case" class="cmp-footer__utility-bar__about-link" id="footer__utility-bar__about">Sobre o Curso Case</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cmp-footer__links">
+                <div class="cmp-container-width aem-Grid aem-Grid--12">
+                    <div class="cmp-footer__links-get-connected aem-GridColumn aem-GridColumn--default--2 aem-GridColumn--phone--12" id="footer__links-get-connected">
+                        <div id="footer__social" class="social-media-links">
+	                        <ul>
+	                            <li><a class="icon-facebook" href="#" title="curta o curso case no facebook"></a></li>
+	                            <li><a class="icon-twitter" href="#" title="siga o curso case no twitter"></a></li>
+	                            <li><a class="icon-linkedin" href="#" title="conecte-se curso case no linkedin"></a></li>
+	                            <li><a class="icon-youtube" href="#" title="assista aos conteúdos do curso case no youtube"></a></li>
+	                            <li><a class="icon-instagram" href="#" title="siga o curso case no instagram"></a></li>
+	                        </ul>
+                        </div>
+                    </div>
+                    <div class="cmp-footer__links-target aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--12 at-element-marker" id="footer__links-target">
+                        <div></div>
+                    </div>
+                    <div class="aem-GridColumn aem-GridColumn--default--2 aem-GridColumn--phone--12" id="footer__links-services">
+                    </div>
+                    <div class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--12" id="footer__links-industries">
+                    </div>
+                    <div class="aem-GridColumn aem-GridColumn--default--2 aem-GridColumn--phone--12" id="footer__links-careers">
+                        <h5>Carreira</h5>
+                        <ul>
+                            <li><a href="/br/pt/pages/careers/articles/vagas.html?icid=bottom_vagas">Construa sua história com o Curso Case</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cmp-footer__links-legal cmp-container-width aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--phone--12" id="footer__links-legal">
+                    <ul>
+                        <li><a href="#">Sobre a Curso Case</a></li>
+                        <li><a href="#">Termos de uso</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cmp-footer__copy-rights cmp-container-width aem-Grid aem-Grid--12">
+                <div class="aem-GridColumn aem-GridColumn--default--10 aem-GridColumn--phone--12">
+                    <div class="cmp-footer__disclaimer" id="footer__disclaimer">
+                        <p></p><p style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;"><span class="small-body-copy">O Curso Case refere-se a um teste do desenvolvedor full-Stack.</span></p>
+                        <p style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">
+                            <span class="small-body-copy">© 2022. Para mais informações, contate o Curso Case.</span><br>
+                        </p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="aem-GridColumn aem-GridColumn--default--2 aem-GridColumn--phone--12">
+                    <div id="footer__sponsor-logo" class="cmp-footer__sponsor-logo"></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/etc/designs/dcom/dcom-main-footer.js"></script>
+    <script src="/etc/designs/dcom/dcom-personalization-libs.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

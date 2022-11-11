@@ -1,0 +1,62 @@
+﻿@model Models.Dto.AlunoDto
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="table-frame" id="main-featured-trending">
+    <div class="table-frame-row">
+        <div class="table-frame-col-100 featured" id="home-featured">
+            <div class="table-frame" id="row3">
+                <div class="table-frame-row">
+                    <div class="table-frame-col-50 standardpromo " id="home-target-3-1">
+                        <div class="eventpromo section">
+                            <div class="events-promo expired-promo"></div>
+                            <div class="cmp-ev-promo-event cmp-ev-promo--standard">
+                                <div class="cmp-ev-promo__header">
+                                    <div class="cmp-ev-promo__date">
+                                        <strong class="cmp-ev-promo__date-day">@DateTime.Now.Day</strong>
+                                        <span class="cmp-ev-promo__date-month">@DateTime.Now.ToString("MMM").</span>
+                                    </div>
+                                </div>
+                                <div class="cmp-ev-promo__content">
+                                    <span class="cmp-ev-promo__type">Entrar</span>
+                                    <h3 class="cmp-ev-promo-event__title">Seja bem-vindo!</h3>
+                                    <div class="gigya-screen v2 landscape" id="gigya-register-screen">
+                                        @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { @class = "gigya-login-form myD-login-form", @id = "gigya-register-form" }))
+                                        {
+                                            <div class="gigya-layout-row"></div>
+                                            <div class="gigya-layout-row with-divider">
+                                                <div class="gigya-layout-cell responsive with-site-login myD-registration-form-fields" id="register-site-login">
+                                                    <div class="gigya-layout-row">
+                                                        <div class="gigya-layout-row">
+                                                            <label class="gigya-label" for="logindivjoin"> E-mail*</label>@*<i class="bar"></i>*@
+                                                            <div class="gigya-composite-control gigya-composite-control-textbox form-field">
+                                                                @Html.TextBoxFor(m => m.Email, new { @class = "gigya-input-text valid-email-text", @onblur="ssojoin(this);", @onfocus="labelActive(this);", @id = "logindivjoin" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="gigya-layout-row">
+                                                        <div class="gigya-layout-row">
+                                                            <label class="gigya-label" for="Senha">Senha* </label>@*<i class="bar"></i>*@
+                                                            <div class="gigya-composite-control gigya-composite-control-textbox form-field">
+                                                                @Html.TextBoxFor(m => m.Senha, new { @class = "gigya-input-password", @type = "password" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="gigya-clear">
+                                                    </div>
+                                                    <div class="gigya-composite-control gigya-composite-control-submit">
+                                                        <input type="submit" class="gigya-input-submit at-element-click-tracking" tabindex="0" value="Entrar">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
