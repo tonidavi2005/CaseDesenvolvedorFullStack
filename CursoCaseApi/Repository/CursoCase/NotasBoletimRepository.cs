@@ -98,6 +98,7 @@ namespace CursoCaseApi.Repository.CursoCase
                 EntityEntry<NotasBoletim> entityEntry = CursoCaseContext.NotasBoletins.Update(notasBoletim);
                 CursoCaseContext.Entry(notasBoletim.Disciplina).State = EntityState.Unchanged;
                 CursoCaseContext.Entry(notasBoletim.Boletim).State = EntityState.Unchanged;
+                CursoCaseContext.Entry(notasBoletim.Boletim.Aluno).State = EntityState.Unchanged;
                 await CursoCaseContext.SaveChangesAsync();
                 return entityEntry.Entity;
             }

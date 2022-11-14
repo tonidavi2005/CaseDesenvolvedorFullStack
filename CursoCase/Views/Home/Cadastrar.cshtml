@@ -2,87 +2,55 @@
 @{
     ViewData["Title"] = "Cadastrar";
 }
-<div class="table-frame" id="main-featured-trending">
-    <div class="table-frame-row">
-        <div class="table-frame-col-100 featured" id="home-featured">
-            <div class="table-frame" id="row3">
-                <div class="table-frame-row">
-                    <div class="table-frame-col-50 standardpromo " id="home-target-3-2">
-                        <div class="eventpromo section">
-                            <div class="events-promo expired-promo"></div>
-                            <div class="cmp-ev-promo-event cmp-ev-promo--standard">
-                                <div class="cmp-ev-promo__header">
-                                    <div class="cmp-ev-promo__date">
-                                        <strong class="cmp-ev-promo__date-day">@DateTime.Now.Day</strong>
-                                        <span class="cmp-ev-promo__date-month">@DateTime.Now.ToString("MMM").</span>
-                                    </div>
-                                </div>
-                                <div class="cmp-ev-promo__content">
-                                    <span class="cmp-ev-promo__type">Cadastrar</span>
-                                    <h3 class="cmp-ev-promo-event__title">Acesse o curso case utilizando suas informações de login</h3>
-                                    <div class="gigya-screen v2 landscape" id="gigya-register-screen">
-                                        @using (Html.BeginForm("Cadastrar", "Home", FormMethod.Post, new { @class = "gigya-login-form myD-login-form", @id = "gigya-register-form" }))
-                                        {
-                                            <div class="gigya-layout-row"></div>
-                                            <div class="gigya-layout-row with-divider">
-                                                <div class="gigya-layout-cell responsive with-site-login myD-registration-form-fields" id="register-site-login">
-                                                    <div class="gigya-layout-row">
-                                                        <div class="gigya-layout-row">
-                                                            <label class="gigya-label" for="Nome"> Nome*</label>@*<i class="bar"></i>*@
-                                                            <div class="gigya-composite-control gigya-composite-control-textbox form-field">
-                                                                @Html.TextBoxFor(m => m.Nome, new { @class = "gigya-input-text" })
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gigya-layout-row">
-                                                        <div class="gigya-layout-row">
-                                                            <label class="gigya-label" for="Nome"> Data Nascimento*</label>@*<i class="bar"></i>*@
-                                                            <div class="gigya-composite-control gigya-composite-control-textbox form-field">
-                                                                @Html.TextBoxFor(m => m.DataNascimento, new { @id = "dtNascimento" })
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gigya-layout-row">
-                                                        <div class="gigya-layout-row">
-                                                            <label class="gigya-label" for="logindivjoin"> E-mail*</label>@*<i class="bar"></i>*@
-                                                            <div class="gigya-composite-control gigya-composite-control-textbox form-field">
-                                                                @Html.TextBoxFor(m => m.Email, new { @class = "gigya-input-text valid-email-text", @onblur="ssojoin(this);", @onfocus="labelActive(this);", @id = "logindivjoin" })
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gigya-layout-row">
-                                                        <div class="gigya-layout-row">
-                                                            <label class="gigya-label" for="Senha">Senha* </label>@*<i class="bar"></i>*@
-                                                            <div class="gigya-composite-control gigya-composite-control-textbox form-field">
-                                                                @Html.TextBoxFor(m => m.Senha, new { @class = "gigya-input-password", @type = "password" })
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gigya-clear">
-                                                    </div>
-                                                    <div class="gigya-composite-control gigya-composite-control-submit">
-                                                        <input type="submit" class="gigya-input-submit at-element-click-tracking" tabindex="0" value="Cadastrar">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        }
-                                    </div>
-                                </div>
-                            </div>
+<div class="row mt-4">
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="mb-0">
+                    <i class="card-icon mdi mdi-cloud-search text-primary icon-md" style="margin-right: 15px"></i>Cadastrar
+                </h6>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Acesse o curso case utilizando suas informações de login</h5>
+                @using (Html.BeginForm("Cadastrar", "Home", FormMethod.Post))
+                {
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="Nome">Nome*</label>
+                            @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="dtNascimento">Data Nascimento*</label>
+                            @Html.TextBoxFor(m => m.DataNascimento, new { @id = "dtNascimento", @class = "form-control", @type = "date" })
                         </div>
                     </div>
-                </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="Email">Email*</label>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="Senha">Senha*</label>
+                            @Html.TextBoxFor(m => m.Senha, new { @class = "form-control", @type = "password" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary mr-2">
+                            Cadastrar
+                        </button>
+                    </div>
+                }
             </div>
         </div>
     </div>
 </div>
 @section Scripts{
-    <script type="text/javascript">
+    @*<script type="text/javascript">
         $(document).ready(function () {
         });
         $(window).on("load", function () {
             console.log("window loaded");
-            $('#dtNascimento').datepicker({ locale: 'pt-br' });
+            $('#dtNascimento').datepicker();
         });
-    </script>
+    </script>*@
 }

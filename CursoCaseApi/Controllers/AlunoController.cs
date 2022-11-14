@@ -117,6 +117,21 @@ namespace CursoCaseApi.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<ActionResult<AlunoDto>> Get(int id)
+        {
+            try
+            {
+                Aluno aluno = await AlunoRepository.GetAlunoAsync(id);
+                AlunoDto alunoDto = Mapper.Map<AlunoDto>(aluno);
+                return Ok(alunoDto);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
         [AllowAnonymous]
         [HttpPost("Criar")]
         public async Task<ActionResult<RespostaApi>> Criar([FromBody] AlunoDto alunoDto)
@@ -185,7 +200,15 @@ namespace CursoCaseApi.Controllers
                     {
                         Expiration = expiration,
                         Message = message,
-                        Token = new JwtSecurityTokenHandler().WriteToken(token)
+                        Token = new JwtSecurityTokenHandler().WriteToken(token),
+                        AlunoLogado = new()
+                        {
+                            DataNascimento = aluno.DataNascimento,
+                            Email = aluno.Email,
+                            Id = aluno.Id,
+                            Nome = aluno.Nome,
+                            Senha = aluno.Senha
+                        }
                     };
 
                     return Ok(userToken);

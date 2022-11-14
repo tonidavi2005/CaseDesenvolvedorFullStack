@@ -40,3 +40,11 @@ C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\bin\Debu
 C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\bin\Debug\net5.0\Models.pdb
 C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\obj\Debug\net5.0\Razor\Views\Home\Cadastrar.cshtml.g.cs
 C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\obj\Debug\net5.0\staticwebassets\CursoCase.StaticWebAssets.Pack.cache
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\obj\Debug\net5.0\staticwebassets\msbuild.CursoCase.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\obj\Debug\net5.0\staticwebassets\msbuild.build.CursoCase.props
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.CursoCase.props
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.CursoCase.props
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\obj\Debug\net5.0\Razor\Views\Aluno\Index.cshtml.g.cs
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\obj\Debug\net5.0\Razor\Views\Aluno\Lista.cshtml.g.cs
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCase\obj\Debug\net5.0\Razor\Views\Aluno\Alterar.cshtml.g.cs

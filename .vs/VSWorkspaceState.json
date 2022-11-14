@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CursoCase",
+    "\\CursoCaseApi",
+    "\\CursoCaseApi\\Repository",
+    "\\CursoCaseApi\\Repository\\CursoCase"
   ],
+  "SelectedNode": "\\CursoCaseApi\\Repository\\CursoCase\\NotasBoletimRepository.cs",
   "PreviewInSolutionExplorer": false
 }

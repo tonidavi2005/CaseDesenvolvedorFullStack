@@ -1,18 +1,15 @@
 ﻿using CursoCase.Models;
+using CursoCase.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Models.Dto;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.Http;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using System.Text;
-using System.Threading.Tasks;
 using Models.Utils;
+using System;
+using System.Diagnostics;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
 
 namespace CursoCase.Controllers
 {
@@ -35,7 +32,8 @@ namespace CursoCase.Controllers
 
         public IActionResult Login()
         {
-            return View();
+            AlunoDto alunoDto = new();
+            return View(alunoDto);
         }
 
         [HttpPost]
@@ -56,6 +54,7 @@ namespace CursoCase.Controllers
                         readTask.Wait();
                         var userToken = JsonSerializer.Deserialize<UserToken>(readTask.Result, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
                         TempData["Token"] = userToken.Token;
+                        TempData.Put("Logado", userToken.AlunoLogado);
                         return View("Index");
                     }
                     else
@@ -97,7 +96,7 @@ namespace CursoCase.Controllers
                     }
                 }
 
-                return View("Login");
+                return View("Index");
             }
             catch (Exception)
             {

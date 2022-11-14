@@ -1,0 +1,45 @@
+﻿@model Models.Dto.AlunoDto
+@{
+    ViewData["Title"] = "Alterar";
+}
+<div class="row mt-4">
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="mb-0">
+                    <i class="card-icon mdi mdi-cloud-search text-primary icon-md" style="margin-right: 15px"></i>Alterar
+                </h6>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("Alterar", "Aluno", FormMethod.Post))
+                {
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="Nome">Nome*</label>
+                            @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="dtNascimento">Data Nascimento*</label>
+                            @Html.TextBoxFor(m => m.DataNascimento, new { @id = "dtNascimento", @class = "form-control", @type = "date" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary mr-2">
+                            Alterar
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    @*<script type="text/javascript">
+        $(document).ready(function () {
+        });
+        $(window).on("load", function () {
+            console.log("window loaded");
+            $('#dtNascimento').datepicker();
+        });
+    </script>*@
+}

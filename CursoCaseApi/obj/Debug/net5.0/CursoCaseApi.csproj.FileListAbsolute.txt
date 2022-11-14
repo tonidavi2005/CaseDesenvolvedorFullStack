@@ -65,3 +65,8 @@ C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCaseApi\bin\D
 C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCaseApi\bin\Debug\net5.0\Models.pdb
 C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCaseApi\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCaseApi\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCaseApi\obj\Debug\net5.0\staticwebassets\CursoCaseApi.StaticWebAssets.Pack.cache
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCaseApi\obj\Debug\net5.0\staticwebassets\msbuild.CursoCaseApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCaseApi\obj\Debug\net5.0\staticwebassets\msbuild.build.CursoCaseApi.props
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCaseApi\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.CursoCaseApi.props
+C:\Users\tonid\Documentos\Projetos\CaseDesenvolvedorFullStack\CursoCaseApi\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.CursoCaseApi.props

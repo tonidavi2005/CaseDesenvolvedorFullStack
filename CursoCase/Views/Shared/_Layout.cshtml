@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="~/etc/designs/dcom/mydeloitte/base.css" />
     <link href="~/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    @RenderSection("css", required: false)
+    <script src="~/js/locales/bootstrap-datepicker.pt-br.min.js"></script>
     <script src="/etc.clientlibs/clientlibs/granite/utils.js"></script>
     <script src="/etc.clientlibs/clientlibs/granite/jquery/granite.js"></script>
     <script src="/etc.clientlibs/foundation/clientlibs/jquery.js"></script>
@@ -33,8 +35,6 @@
     <script src="/etc/designs/dcom/clientlibs-homepage.js"></script>
     <script src="~/js/bootstrap.bundle.js"></script>
     <script src="~/js/bootstrap-datepicker.min.js"></script>
-    <script src="~/js/locales/bootstrap-datepicker.pt-br.min.js"></script>
-    @RenderSection("css", required: false)
 </head>
 <body class="ccm-enabled">
     <header class="cmp-header" id="header" role="banner">
@@ -43,7 +43,7 @@
                 <i class="icon-navicon"></i>
             </button>
             <div class="cmp-header__logo" id="header__logo">
-                <a href="#" title="Curso Case">
+                <a asp-action="Index" asp-controller="Home" title="Curso Case">
                     <img src="/content/dam/assets/logos/deloitte.svg" alt="Curso Case" width="182" height="34">
                     <img class="cmp-header__logo--print" src="/content/dam/assets/logos/deloitte-print.png" alt="" width="182" height="34">
                 </a>
@@ -53,18 +53,15 @@
             <div id="pr-nav" class="cmp-pr-nav">
                 <nav role="navigation">
                     <ul class="nav" role="menubar">
-                        @if (TempData["Token"] != null)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link active" style="color:white" href="#">Aluno</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" style="color:white" href="#">Disciplina</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" style="color:white" href="#">Boletim</a>
-                            </li>
-                        }
+                        <li class="nav-item">
+                            <a asp-controller="Aluno" asp-action="Index" class="nav-link active" style="color:white">Aluno</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color:white" href="#">Disciplina</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color:white" href="#">Boletim</a>
+                        </li>
                         <li class="cmp-pr-nav__site-selector cmp-pr-nav__item" role="menuitem">
                             <a href="javascript:void(0)" class="cmp-header__ut-nav__site-sel__link location-link" data-toggle="siteSelector" aria-expanded="false" role="button">
                                 <span class="desk-countrySelector">BR-PT</span>
@@ -147,7 +144,7 @@
                 </ul>
             </div>
         </div>
-        <div class="breadcrumb-container">
+        @*<div class="breadcrumb-container">
             <div class="languageselector">
                 <ul class="language-display">
                     <li>
@@ -163,7 +160,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div>*@
     </header>
     <div class="wrapper home-page" style="top: 98px;">
         <div class="extended-background black">

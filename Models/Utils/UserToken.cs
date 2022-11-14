@@ -1,3 +1,4 @@
+using Models.Dto;
 using System;
 
 namespace Models.Utils
@@ -9,5 +10,7 @@ namespace Models.Utils
         public DateTime Expiration { get; set; }
 
         public string Message { get; set; }
+
+        public AlunoDto AlunoLogado { get; set; }
     }
 }

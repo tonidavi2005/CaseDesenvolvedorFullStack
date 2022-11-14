@@ -1,35 +1,35 @@
-﻿@model Models.Dto.AlunoDto
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
-<div class="table-frame-row">
-    <div class="table-frame-col-50 standardpromo " id="home-target-3-1">
-        <div class="eventpromo section">
-            <div class="cmp-ev-promo-event cmp-ev-promo--standard">
-                <div class="cmp-ev-promo__content">
-                    <span class="cmp-ev-promo__type"></span>
-                    <h3 class="cmp-ev-promo-event__title">Já tem cadastro, clique no link para o login</h3>
-                </div>
-                <div class="cmp-ev-promo-event__CTA">
-                    <a class="cmp-ev-promo-event__CTA-link cmp-ev-promo-event__CTA-link_register" asp-controller="Home" asp-action="Login">
-                        Entrar
-                    </a>
-                    <span class="cmp-ev-promo-event__divider"></span>
-                </div>
+<div class="row mt-4">
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="mb-0">
+                    <i class="card-icon mdi mdi-cloud-search text-primary icon-md" style="margin-right: 15px"></i>Entrar
+                </h6>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Já tem cadastro, clique no link para o login</h5>
+                <a class="card-link" asp-controller="Home" asp-action="Login">
+                    Entrar
+                </a>
             </div>
         </div>
     </div>
-    <div class="table-frame-col-50 standardpromo " id="home-target-3-2">
-        <div class="standardpromo section">
-            <a class="promo-focus" asp-controller="Home" asp-action="Cadastrar">
-                <div class="standard-promo perspective-color">
-                    <p class="promo-label">Criar Conta</p>
-                    <h3 class="tertiary-headline">Clique no link para se cadastrar</h3>
-                    <div class="call-to-action-label ">
-                        Registre-se
-                    </div>
-                </div>
-            </a>
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="mb-0">
+                    <i class="card-icon mdi mdi-cloud-search text-primary icon-md" style="margin-right: 15px"></i>Criar Conta
+                </h6>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Clique no link para se cadastrar</h5>
+                <a class="card-link" asp-controller="Home" asp-action="Cadastrar">
+                    Registre-se
+                </a>
+            </div>
         </div>
     </div>
 </div>
